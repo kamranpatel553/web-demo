@@ -34,6 +34,24 @@
     .then(data => {
       document.getElementById("navbar").innerHTML = data;
     });
+    
+    function toggleMenu() {
+      document.body.classList.toggle('menu-open');
+    }
+
+    function overlayClick(event) {
+      if (event.target.classList.contains('mobile-menu-overlay')) {
+        document.body.classList.remove('menu-open');
+      }
+    }
+
+    // close menu when any mobile-menu link clicked
+    document.addEventListener('click', function (e) {
+      if (e.target.closest('.mobile-menu a')) {
+        document.body.classList.remove('menu-open');
+      }
+    });
+
 </script>
   </header>
   <!-- Hero Section -->
@@ -460,24 +478,7 @@
       <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" class="whatsapp_icon">
     </a>
   </footer>
-   <script>
-    function toggleMenu() {
-      document.body.classList.toggle('menu-open');
-    }
-
-    function overlayClick(event) {
-      if (event.target.classList.contains('mobile-menu-overlay')) {
-        document.body.classList.remove('menu-open');
-      }
-    }
-
-    // close menu when any mobile-menu link clicked
-    document.addEventListener('click', function (e) {
-      if (e.target.closest('.mobile-menu a')) {
-        document.body.classList.remove('menu-open');
-      }
-    });
-  </script>
+ 
 
 </body>
 
